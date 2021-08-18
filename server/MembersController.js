@@ -1,10 +1,10 @@
 import Member from "./Members.js";
-import MemberService from "./MemberService.js";
+import MemberService from "./services/MemberService.js";
 
 class MembersController {
   async create(req, res) {
     try {
-      const createdMember = await MemberService.create(req.body);
+      const createdMember = await MemberService.create(req.body, req.files.photo);
       res.json(createdMember);
     } catch (error) {
       res.status(500).json(error);
