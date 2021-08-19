@@ -1,3 +1,3 @@
-import AppSpiner from "@/components/UI/AppSpiner";
+import AppSpinner from "@/components/UI/AppSpinner";
 
-export default [AppSpiner];
+export default [AppSpinner];
