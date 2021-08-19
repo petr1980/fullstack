@@ -1,0 +1,15 @@
+@import "normalize";
+@import "helpers/font";
+
+html {
+  font-size: 16px;
+}
+body {
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  color: $mainColor;
+}
+
+.container {
+  padding: 0 15px;
+}

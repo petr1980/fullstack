@@ -1,10 +1,10 @@
 <template>
-  <h1>home</h1>
+  <h1>PegeDictionary</h1>
 </template>
 
 <script>
 export default {
-  name: "HomePage",
+  name: "PegeDictionary",
 };
 </script>
 
