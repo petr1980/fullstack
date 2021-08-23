@@ -1,3 +1,5 @@
-import AppSpinner from "@/components/UI/AppSpinner";
+import AppSpinner from "./AppSpinner";
+import FormItemWrapper from "./FormItemWrapper";
+import CustomInput from "./CustomInput";
 
-export default [AppSpinner];
+export default [AppSpinner, FormItemWrapper, CustomInput];

@@ -7,7 +7,7 @@ export default {
   },
   getters: {
     getSpin(state) {
-      return state.spiner + "11111";
+      return state.spiner;
     },
   },
   actions: {},

@@ -7,6 +7,11 @@ const routes = [
     component: () => import("../pages/PageHome"),
   },
   {
+    path: "/login",
+    name: "Login",
+    component: () => import("../pages/PageLogin"),
+  },
+  {
     path: "/dictionary",
     name: "Dictionary",
     component: () => import("../pages/PegeDictionary"),

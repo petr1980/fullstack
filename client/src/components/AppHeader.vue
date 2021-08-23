@@ -26,6 +26,10 @@ export default {
           title: "Home page",
         },
         {
+          pageName: "Login",
+          title: "Page login",
+        },
+        {
           pageName: "Dictionary",
           title: "Dictionary",
         },

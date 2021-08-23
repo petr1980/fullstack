@@ -62,6 +62,10 @@
   }
 }
 
+// =============================================================================
+// Custom scroll
+// =============================================================================
+
 @mixin pretty-scroll($bg-color: transparent, $thumb-color: $grey-600) {
   scrollbar-color: $thumb-color $bg-color;
   scrollbar-width: thin;
