@@ -30,5 +30,7 @@ export default {
   width: 100%;
   height: 35px;
   padding: 0 10px;
+  border: 1px solid $gold;
+  border-radius: 4px;
 }
 </style>

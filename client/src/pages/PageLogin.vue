@@ -44,6 +44,7 @@ export default {
         return;
       } else {
         console.log({ email, password });
+        this.$router.push({ name: "Home" });
       }
     },
   },
@@ -64,6 +65,6 @@ export default {
   width: 500px;
   max-width: 100%;
   padding: 30px;
-  border: 1px solid #333;
+  @include tale-color();
 }
 </style>

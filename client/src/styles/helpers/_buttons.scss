@@ -1,0 +1,27 @@
+.button {
+  min-width: rem(220px);
+  height: rem(55px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0 10px;
+  line-height: 1;
+  color: $text-color;
+  text-decoration: none;
+  border: 1px solid $gold;
+  transition: background 0.5s;
+  border-radius: 4px;
+}
+
+.button-primary {
+  background-color: $gold;
+  &:hover {
+    background-color: rgba($color: $gold, $alpha: 0.6);
+  }
+}

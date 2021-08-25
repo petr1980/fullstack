@@ -341,10 +341,7 @@ template {
 }
 
 // custom
-* {
-  margin: 0;
-  padding: 0;
-}
+
 *,
 *:before,
 *:after {
@@ -358,27 +355,21 @@ button,
 [type="reset"],
 [type="submit"] {
   cursor: pointer;
-  //border: none;
-  //   width: auto;
-  //   overflow: visible;
-  //   background: transparent;
-  //   color: inherit;
-  //   font: inherit;
 
   &:focus {
     outline: none;
   }
 }
 
-// ul {
-//   margin: 0;
-//   padding: 0;
-//   list-style: none;
-//   li {
-//     list-style-type: none;
-//   }
-// }
-
 img {
   max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
 }

@@ -1,10 +1,12 @@
 <template>
   <form class="form" @submit.prevent="sendForm">
-    <h2 class="form__title">{{ title }}</h2>
+    <h2 class="form__title title">{{ title }}</h2>
     <slot name="content" />
-    <slot name="actions">
-      <button class="button">Submit</button>
-    </slot>
+    <div class="form__actions">
+      <slot name="actions">
+        <button class="button button-primary">Submit</button>
+      </slot>
+    </div>
   </form>
 </template>
 
@@ -44,9 +46,10 @@ export default {
 <style lang="scss" scoped>
 .form {
   &__title {
-    margin: 0 0 1em;
-    font-size: 2em;
-    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  &__actions {
+    margin-top: 2em;
   }
 }
 </style>

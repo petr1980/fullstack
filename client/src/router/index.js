@@ -14,7 +14,7 @@ const routes = [
   {
     path: "/dictionary",
     name: "Dictionary",
-    component: () => import("../pages/PegeDictionary"),
+    component: () => import("../pages/PageDictionary"),
   },
 ];
 

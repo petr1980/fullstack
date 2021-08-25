@@ -8,6 +8,8 @@ module.exports = {
       scss: {
         prependData: `
         @import "@/styles/helpers/_colors.scss";
+        @import "@/styles/helpers/_vars.scss";
+
         @import "@/styles/helpers/_mixins.scss";
                 `,
       },

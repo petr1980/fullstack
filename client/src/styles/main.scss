@@ -1,15 +1,72 @@
 @import "normalize";
 @import "helpers/font";
+@import "helpers/buttons";
 
 html {
-  font-size: 16px;
+  font-size: $html-font-size;
 }
 body {
   font-family: Roboto, sans-serif;
   font-weight: normal;
-  color: $mainColor;
+  color: $text-color;
+  background-color: $dark900;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
 }
 
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 15px;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.page {
+  position: relative;
+  height: calc(100% - rem(65px));
+  padding: 3rem 0;
+}
+
+.page-title {
+  position: relative;
+  margin-bottom: rem(60px);
+  padding-top: rem(30px);
+  font-size: rem(40px);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $white;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: rem(90px);
+    height: 6px;
+    background: $gold;
+  }
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: rem(40px);
+  padding-top: rem(20px);
+  font-size: rem(30px);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $white;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: rem(40px);
+    height: 3px;
+    background: $gold;
+  }
 }

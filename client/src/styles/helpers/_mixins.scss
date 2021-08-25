@@ -63,6 +63,30 @@
 }
 
 // =============================================================================
+// Rem sizel
+// =============================================================================
+
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+  @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
+
+// =============================================================================
+//  tale
+// =============================================================================
+@mixin tale-color($border-color: $border-tiles, $border-radius: 8px) {
+  background: $dark-tiles;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+}
+
+@mixin tale-hover($border-color: $gold) {
+  border-color: $border-color;
+}
+
+// =============================================================================
 // Custom scroll
 // =============================================================================
 

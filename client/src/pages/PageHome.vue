@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <app-spinner :show="loading" type="circle" />
-    <h2>{{ $store.getters["helpers/getSpin"] }}</h2>
+  <div class="page">
+    <div class="container">
+      <app-spinner :show="loading" type="circle" />
+      <h1 class="page-title">{{ title }}</h1>
+    </div>
   </div>
 </template>
 
@@ -11,6 +13,7 @@ export default {
   name: "PageHome",
   data() {
     return {
+      title: "Home page",
       loading: true,
     };
   },
