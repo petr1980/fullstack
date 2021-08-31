@@ -1,6 +1,8 @@
 import express from "express";
 import mongoose from "mongoose";
-import fileLoad from "express-fileupload"
+import cors from "cors";
+
+import fileLoad from "express-fileupload";
 import router from "./router.js";
 
 const LOGIN_DB = "user";
@@ -11,8 +13,9 @@ const DATA_BASE = `mongodb+srv://${LOGIN_DB}:${PASSWORD_DB}@cluster0.jh2qs.mongo
 
 const app = express();
 app.use(express.json());
-app.use(express.static('static'))
-app.use(fileLoad({}))
+app.use(express.static("static"));
+app.use(fileLoad({}));
+app.use(cors());
 app.use("/api", router);
 
 async function startApp() {

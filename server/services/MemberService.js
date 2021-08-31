@@ -1,10 +1,10 @@
-import Member from "../Members.js";
-import fileService from './fileService.js';
+import Member from "../model/Members.js";
+import fileService from "./fileService.js";
 
 class MemberService {
   async create(member, file) {
-    const fileName = fileService.saveFile(file)
-    return await Member.create({...member, photo: fileName});
+    const fileName = fileService.saveFile(file);
+    return await Member.create({ ...member, photo: fileName });
   }
 
   async getAll() {

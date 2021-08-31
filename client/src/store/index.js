@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 
 import helpers from "./modules/helpers";
+import tree from "./modules/tree";
 
 const store = createStore({
   state: {
@@ -9,7 +10,7 @@ const store = createStore({
   getters: {},
   actions: {},
   mutations: {},
-  modules: { helpers },
+  modules: { helpers, tree },
 });
 
 export default store;
