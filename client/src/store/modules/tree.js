@@ -10,7 +10,8 @@ export default {
   },
   getters: {},
   actions: {
-    async getTree({ commit }) {
+    async getTree({ state, commit }) {
+      if (state.tree.length) return;
       try {
         const { data } = await getTree();
         commit("setTree", data);

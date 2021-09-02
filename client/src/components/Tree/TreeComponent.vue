@@ -2,9 +2,9 @@
   <div class="tree-component">
     <div class="tree-component__content" v-if="tree.length">
       <tree-item
-        v-for="branch in treeData"
-        :key="branch.id"
-        :branch="branch"
+        v-for="item in treeData"
+        :key="item.id"
+        :branch="item"
       ></tree-item>
     </div>
     <slot />
@@ -34,8 +34,10 @@ export default {
 <style scoped lang="scss">
 .tree-component {
   position: relative;
-  width: 300px;
-  height: 500px;
+  width: 500px;
+  min-height: 200px;
   margin: 0 auto;
+  padding: 20px;
+  border: 1px solid $gold;
 }
 </style>

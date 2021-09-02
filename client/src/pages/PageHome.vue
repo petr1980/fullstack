@@ -2,6 +2,7 @@
   <div class="page">
     <div class="container">
       <h1 class="page-title">{{ title }}</h1>
+      {{ translated }}
       <tree-component :tree="tree">
         <app-spinner :show="loading" type="circle" />
       </tree-component>
@@ -23,21 +24,25 @@ export default {
     };
   },
   created() {
-    this.loading = true;
-    this.getTree().then(() => {
-      this.loading = false;
-    });
-
-    setTimeout(() => {
-      this.loading = false;
-    }, 1000);
+    this.loadTree();
+    this.getTranslate();
   },
 
   computed: {
     ...mapState("tree", ["tree"]),
+    ...mapState("translate", ["translated"]),
   },
   methods: {
     ...mapActions("tree", ["getTree"]),
+    ...mapActions("translate", ["getTranslate"]),
+
+    loadTree() {
+      if (this.tree.length) return;
+      this.loading = true;
+      this.getTree().then(() => {
+        this.loading = false;
+      });
+    },
   },
 };
 </script>

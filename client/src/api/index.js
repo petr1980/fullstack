@@ -8,4 +8,8 @@ function getTree() {
   return axios.get(`${process.env.VUE_APP_URL}/tree`);
 }
 
-export { getPosts, getTree };
+function getTranslate(params) {
+  return axios.get(`${process.env.VUE_APP_URL}/translate`, { params });
+}
+
+export { getPosts, getTree, getTranslate };

@@ -47,9 +47,10 @@ export default {
   justify-content: space-between;
   position: sticky;
   top: 0;
+  z-index: 101;
   height: rem(65px);
   padding: 10px 15px;
-  background: $dark-tiles;
+  background: $dark-tiles-07;
   border-bottom: 1px solid $gold;
 
   &__nav {
