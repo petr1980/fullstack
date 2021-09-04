@@ -1,8 +1,11 @@
 <template>
-  <div class="tile-item">
+  <router-link
+    class="tile-item"
+    :to="{ name: 'vocabulary', params: { id: data.id } }"
+  >
     <div class="tile-item__title">{{ data.title }}</div>
     <div class="tile-item__count">{{ data.count }} words</div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -30,6 +33,8 @@ export default {
   justify-content: center;
   height: rem(180px);
   padding: 15px;
+  color: inherit;
+  text-decoration: none;
   @include tale-color(transparent, 4px);
   &:hover {
     @include tale-hover();

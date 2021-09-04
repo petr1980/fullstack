@@ -22,32 +22,32 @@ export default {
       title: "My dictionary",
       dictionaryList: [
         {
-          id: 1,
+          id: "My dictionary",
           title: "My dictionary",
           count: "100",
         },
         {
-          id: 2,
+          id: "Drinks",
           title: "Drinks",
           count: "200",
         },
         {
-          id: 3,
+          id: "Words from the Internet",
           title: "Words from the Internet",
           count: "1200",
         },
         {
-          id: 1,
-          title: "My dictionary",
+          id: "Family",
+          title: "Family",
           count: "100",
         },
         {
-          id: 2,
-          title: "Drinks",
+          id: "Family",
+          title: "Family",
           count: "200",
         },
         {
-          id: 3,
+          id: "Words from the Internet",
           title: "Words from the Internet",
           count: "1200",
         },
