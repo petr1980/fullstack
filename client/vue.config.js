@@ -6,7 +6,7 @@ module.exports = {
     sourceMap: true,
     loaderOptions: {
       scss: {
-        prependData: `
+        additionalData: `
         @import "@/styles/helpers/_colors.scss";
         @import "@/styles/helpers/_vars.scss";
 

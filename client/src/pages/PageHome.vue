@@ -26,6 +26,10 @@ export default {
   created() {
     this.loadTree();
     this.getTranslate();
+    // this.$toast.success(`Hey! I'm here`);
+    // this.$toast.error(`Hey! I'm here`);
+    // this.$toast.warning(`Hey! I'm here`);
+    // this.$toast.info(`Hey!<br> I'm here`);
   },
 
   computed: {
@@ -39,7 +43,10 @@ export default {
     loadTree() {
       if (this.tree.length) return;
       this.loading = true;
-      this.getTree().then(() => {
+      this.getTree().then((data) => {
+        if (data?.error) {
+          this.$toast.error(data.error);
+        }
         this.loading = false;
       });
     },

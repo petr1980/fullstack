@@ -16,7 +16,8 @@ export default {
         const { data } = await getTree();
         commit("setTree", data);
       } catch (err) {
-        console.log(err);
+        console.log(err.message);
+        return { error: err.message };
       }
     },
   },
