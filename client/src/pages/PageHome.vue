@@ -2,7 +2,7 @@
   <div class="page">
     <div class="container">
       <h1 class="page-title">{{ title }}</h1>
-      {{ translated }}
+      {{ lingvolive }}
       <tree-component :tree="tree">
         <app-spinner :show="loading" type="circle" />
       </tree-component>
@@ -25,7 +25,9 @@ export default {
   },
   created() {
     this.loadTree();
-    this.getTranslate();
+    this.getLingvoliveToken().then(() => {
+      this.getTranslateLingvolive();
+    });
     // this.$toast.success(`Hey! I'm here`);
     // this.$toast.error(`Hey! I'm here`);
     // this.$toast.warning(`Hey! I'm here`);
@@ -34,11 +36,14 @@ export default {
 
   computed: {
     ...mapState("tree", ["tree"]),
-    ...mapState("translate", ["translated"]),
+    ...mapState("translate", ["lingvolive"]),
   },
   methods: {
     ...mapActions("tree", ["getTree"]),
-    ...mapActions("translate", ["getTranslate"]),
+    ...mapActions("translate", [
+      "getLingvoliveToken",
+      "getTranslateLingvolive",
+    ]),
 
     loadTree() {
       if (this.tree.length) return;

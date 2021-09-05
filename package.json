@@ -1,0 +1,19 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "description": "fullstack learn => node.js and vue3.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently  --names \"CLIENT,SERVER\"  \"npm run serve --prefix client\" \"npm run dev --prefix server\"   "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petr1980/fullstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petr1980/fullstack/issues"
+  },
+  "homepage": "https://github.com/petr1980/fullstack#readme"
+}

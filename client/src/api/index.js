@@ -12,4 +12,21 @@ function getTranslate(params) {
   return axios.get(`${process.env.VUE_APP_URL}/translate`, { params });
 }
 
-export { getPosts, getTree, getTranslate };
+function registrationLingvolive() {
+  return axios.get(`${process.env.VUE_APP_URL}/lingvolive/api/key`);
+}
+
+function getTranslateLingvolive({ request }) {
+  return axios.post(
+    `${process.env.VUE_APP_URL}/lingvolive/api/translate`,
+    request
+  );
+}
+
+export {
+  getPosts,
+  getTree,
+  getTranslate,
+  registrationLingvolive,
+  getTranslateLingvolive,
+};
