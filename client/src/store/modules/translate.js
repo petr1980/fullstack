@@ -1,8 +1,4 @@
-import {
-  getTranslate,
-  registrationLingvolive,
-  getTranslateLingvolive,
-} from "@/api";
+import translateApi from "@/api/modules/translate";
 
 export default {
   namespaced: true,
@@ -11,13 +7,14 @@ export default {
     return {
       translated: "",
       lingvoliveToken: "",
+      lingvolive: "",
     };
   },
   getters: {},
   actions: {
     async getTranslate({ commit }) {
       try {
-        const { data } = await getTranslate({
+        const { data } = await translateApi.getTranslate({
           text: "Привет мир",
           from: "ru",
           to: "en",
@@ -30,21 +27,21 @@ export default {
 
     async getLingvoliveToken({ state, commit }) {
       if (state.lingvoliveToken) return;
-      if (localStorage.getItem("token")) {
-        commit("setLingvoliveToken", localStorage.getItem("token"));
+      if (localStorage.getItem("lingvoliveToken")) {
+        commit("setLingvoliveToken", localStorage.getItem("lingvoliveToken"));
         return;
       }
 
       try {
-        const { data } = await registrationLingvolive();
+        const { data } = await translateApi.registrationLingvolive();
         commit("setLingvoliveToken", data);
-        localStorage.setItem({ token: data });
+        localStorage.setItem("lingvoliveToken", data);
       } catch (err) {
         console.log(err);
       }
     },
 
-    async getTranslateLingvolive({ state }) {
+    async getTranslateLingvolive({ state, commit }) {
       const request = {
         text: "hazard",
         srcLang: "1033",
@@ -53,8 +50,8 @@ export default {
       };
 
       try {
-        const data = await getTranslateLingvolive({ request });
-        return data;
+        const data = await translateApi.getTranslateLingvolive({ request });
+        commit("setLingvolive", data);
       } catch (err) {
         console.log(err);
       }
@@ -66,6 +63,9 @@ export default {
     },
     setLingvoliveToken(state, value) {
       state.lingvoliveToken = value;
+    },
+    setLingvolive(state, value) {
+      state.lingvolive = value;
     },
   },
 };

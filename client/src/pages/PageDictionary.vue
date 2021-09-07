@@ -7,19 +7,31 @@
           <tile-dictionary :data="item" />
         </template>
       </tile-list>
+
+      <button class="button button-primary" @click="openModal">Add set</button>
     </div>
+
+    <the-modal
+      :is-open="isModalOpen"
+      @confirm="addWords"
+      @closeModal="isModalOpen = false"
+    >
+      <template #content>aaaaaa</template>
+    </the-modal>
   </div>
 </template>
 
 <script>
+import TheModal from "@/components/TheModal";
 import TileDictionary from "../components/TileDictionary.vue";
 import TileList from "../components/TileList.vue";
 export default {
   name: "PageDictionary",
-  components: { TileList, TileDictionary },
+  components: { TheModal, TileList, TileDictionary },
   data() {
     return {
       title: "My dictionary",
+      isModalOpen: false,
       dictionaryList: [
         {
           id: "My dictionary",
@@ -53,6 +65,15 @@ export default {
         },
       ],
     };
+  },
+
+  methods: {
+    openModal() {
+      this.isModalOpen = true;
+    },
+    addWords() {
+      console.log("confirm");
+    },
   },
 };
 </script>

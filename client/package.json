@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "icon-generate": "icon-font-generator ./src/assets/img/icons/*.svg -o src/assets/fonts/icons --height 500"
   },
   "dependencies": {
     "@meforma/vue-toaster": "^1.2.2",
@@ -28,6 +29,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
+    "icon-font-generator": "^2.1.11",
     "node-sass": "^6.0.1",
     "prettier": "^2.2.1",
     "sass": "^1.39.0",

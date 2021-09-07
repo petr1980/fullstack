@@ -14,14 +14,29 @@
   line-height: 1;
   color: $text-color;
   text-decoration: none;
-  border: 1px solid $gold;
   transition: background 0.5s;
   border-radius: 4px;
+    border: 0;
+    outline: none;
 }
 
 .button-primary {
-  background-color: $gold;
+    border: 1px solid $gold;
+    background-color: $gold;
   &:hover {
     background-color: rgba($color: $gold, $alpha: 0.6);
   }
+}
+
+.button-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: auto;
+    width: rem(50px);
+    height: rem(50px);
+    background-color: rgba($color: $gold, $alpha: 0.8);
+    &:hover {
+        background-color: $gold
+    }
 }

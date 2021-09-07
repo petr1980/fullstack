@@ -1,14 +1,14 @@
 <template>
   <div class="main">
-    <app-header v-if="showHeader" />
+    <the-header v-if="showHeader" />
     <router-view />
   </div>
 </template>
 
 <script>
-import AppHeader from "./components/AppHeader.vue";
+import TheHeader from "./components/TheHeader.vue";
 export default {
-  components: { AppHeader },
+  components: { TheHeader },
   name: "App",
   data() {
     return {
@@ -26,4 +26,3 @@ export default {
 <style lang="scss">
 @import "src/styles/main";
 </style>
-

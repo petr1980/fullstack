@@ -76,7 +76,7 @@
 // =============================================================================
 //  tale
 // =============================================================================
-@mixin tale-color($border-color: $border-tiles, $border-radius: 8px) {
+@mixin tale-color($border-color: $gold, $border-radius: 8px) {
   background: $dark-tiles;
   border: 1px solid $border-color;
   border-radius: $border-radius;

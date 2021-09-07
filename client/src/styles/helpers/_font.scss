@@ -20,3 +20,12 @@
   "normal",
   woff woff2 svg eot
 );
+
+
+@include font-face(
+  "icons",
+  "assets/fonts/icons/icons",
+   "normal",
+   "normal",
+  woff woff2 svg eot
+);

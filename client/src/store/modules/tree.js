@@ -1,4 +1,4 @@
-import { getTree } from "@/api";
+import treeApi from "@/api/modules/tree";
 
 export default {
   namespaced: true,
@@ -13,7 +13,7 @@ export default {
     async getTree({ state, commit }) {
       if (state.tree.length) return;
       try {
-        const { data } = await getTree();
+        const { data } = await treeApi.getTree();
         commit("setTree", data);
       } catch (err) {
         console.log(err.message);
