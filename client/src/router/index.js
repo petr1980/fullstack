@@ -21,6 +21,11 @@ const routes = [
     name: "vocabulary",
     component: () => import("../pages/PageVocabulary.vue"),
   },
+  {
+    path: "/dictionary/training/:id",
+    name: "training",
+    component: () => import("../pages/PageTraining.vue"),
+  },
 ];
 
 const router = createRouter({

@@ -7,31 +7,29 @@
           <h2 class="section-title">{{ set }}</h2>
           <router-link
             class="button button-primary"
-            :to="{ name: 'training', params: { id: set } }"
-            >learn the set</router-link
+            :to="{ name: 'vocabulary', params: { id: set } }"
+            >return to set</router-link
           >
         </div>
-        <div class="vocabulary">
-          <div class="vocabulary__item" v-for="word in words" :key="word.id">
-            <button class="audio">Voice</button>
-            <div class="word">
-              <div class="en">{{ word.en }}</div>
-              <div class="ru">{{ word.ru }}</div>
-            </div>
-            <input class="check" type="checkbox" :value="word.id" />
-          </div>
-        </div>
+        <training-flip-cards :words="words">
+          <template #tile="{ word }">
+            <app-tile :word="word" flip></app-tile>
+          </template>
+        </training-flip-cards>
       </section>
     </div>
   </div>
 </template>
 
 <script>
+import TrainingFlipCards from "@/components/Training/TrainingFlipCards";
+import AppTile from "@/components/UI/AppTile";
 export default {
-  name: "PageVocabulary",
+  name: "PageTraining",
+  components: { AppTile, TrainingFlipCards },
   data() {
     return {
-      title: "Vocabulary",
+      title: "Training",
       words: [
         {
           id: 1,
@@ -66,6 +64,7 @@ export default {
       ],
     };
   },
+
   computed: {
     set() {
       return this.$route.params.id;
@@ -74,24 +73,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.vocabulary {
-  &__item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    font-size: rem(18px);
-    border-bottom: 1px solid $gold;
-  }
-  .word {
-    margin-left: 20px;
-    .en {
-      font-weight: bold;
-    }
-  }
-  .check {
-    margin-left: auto;
-  }
-}
-</style>
+<style scoped></style>

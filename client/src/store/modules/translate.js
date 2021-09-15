@@ -41,7 +41,7 @@ export default {
       }
     },
 
-    async getTranslateLingvolive({ state, commit }) {
+    async getTranslateLingvolive({ state, commit, dispatch }) {
       const request = {
         text: "hazard",
         srcLang: "1033",
@@ -52,8 +52,11 @@ export default {
       try {
         const data = await translateApi.getTranslateLingvolive({ request });
         commit("setLingvolive", data);
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        if (error.response.status === 401) {
+          localStorage.removeItem("lingvoliveToken");
+          dispatch("getLingvoliveToken");
+        }
       }
     },
   },

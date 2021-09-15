@@ -15,6 +15,9 @@ class LingvoliveTranslateController {
       const { data } = await LingvoliveTranslateService.translate(req);
       res.json(data);
     } catch (error) {
+      if (error.response.status === 401) {
+        return res.status(401).json(error);
+      }
       res.status(500).json(error);
     }
   }

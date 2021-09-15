@@ -1,13 +1,18 @@
 <template>
   <div class="modal" v-if="isOpen">
     <div class="modal__content">
-      <slot name="content"></slot>
+      <div class="modal__text">
+        <slot name="content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita,
+          similique!
+        </slot>
+      </div>
       <slot name="actions">
         <div class="modal__btns">
           <button class="button button-primary" @click="confirm">
             Confirm
           </button>
-          <button class="button button-cancel" @click="closeModal">
+          <button class="button button-danger" @click="closeModal">
             Cancel
           </button>
         </div>
@@ -81,6 +86,20 @@ export default {
     position: absolute;
     top: 5px;
     right: 5px;
+  }
+  &__text {
+    margin-bottom: 1.5rem;
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .button {
+      margin-right: 1rem;
+      &:last-child {
+        margin-left: 0;
+      }
+    }
   }
 }
 </style>

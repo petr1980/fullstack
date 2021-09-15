@@ -16,7 +16,10 @@
       @confirm="addWords"
       @closeModal="isModalOpen = false"
     >
-      <template #content>aaaaaa</template>
+      <template #content
+        >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita,
+        similique!</template
+      >
     </the-modal>
   </div>
 </template>
