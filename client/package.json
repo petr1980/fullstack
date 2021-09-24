@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:prod": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "icon-generate": "icon-font-generator ./src/assets/img/icons/*.svg -o src/assets/fonts/icons --height 500"
   },
