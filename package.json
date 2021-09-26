@@ -4,7 +4,8 @@
   "description": "fullstack learn => node.js and vue3.js",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently  --names \"CLIENT,SERVER\"  \"npm run serve --prefix client\" \"npm run dev --prefix server\"   "
+    "start": "concurrently  --names \"CLIENT,SERVER\"  \"npm run serve --prefix client\" \"npm run dev --prefix server\"   ",
+    "build:prod": "concurrently  --names \"CLIENT,SERVER\"  \"npm run build:prod --prefix client\" \"npm run start --prefix server\"   "
   },
   "repository": {
     "type": "git",
