@@ -5,6 +5,8 @@ import cors from "cors";
 import fileLoad from "express-fileupload";
 import router from "./router.js";
 
+import wss from "./controller/WebsocketClient";
+
 const LOGIN_DB = "user";
 const PASSWORD_DB = "user";
 
