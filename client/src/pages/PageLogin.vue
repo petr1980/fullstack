@@ -3,18 +3,18 @@
     <div class="login">
       <app-form @submit="submitLogin" :formData="login" title="Login">
         <template v-slot:content>
-          <form-item-wrapper
+          <app-form-item-wrapper
             label="Enter label"
             :invalid="invalid && !login.email"
           >
-            <custom-input v-model.trim="login.email" />
-          </form-item-wrapper>
-          <form-item-wrapper
+            <app-input v-model.trim="login.email" />
+          </app-form-item-wrapper>
+          <app-form-item-wrapper
             label="Enter password"
             :invalid="invalid && !login.password"
           >
-            <custom-input v-model.trim="login.password" />
-          </form-item-wrapper>
+            <app-input v-model.trim="login.password" />
+          </app-form-item-wrapper>
         </template>
       </app-form>
     </div>

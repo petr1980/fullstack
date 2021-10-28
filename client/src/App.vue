@@ -2,13 +2,15 @@
   <div class="main">
     <the-header v-if="showHeader" />
     <router-view />
+    <the-chat-widget></the-chat-widget>
   </div>
 </template>
 
 <script>
+import TheChatWidget from "@/components/ChatWidget/TheChatWidget";
 import TheHeader from "./components/TheHeader.vue";
 export default {
-  components: { TheHeader },
+  components: { TheChatWidget, TheHeader },
   name: "App",
   data() {
     return {

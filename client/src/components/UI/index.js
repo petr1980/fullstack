@@ -1,5 +1,5 @@
 import AppSpinner from "./AppSpinner";
-import FormItemWrapper from "./FormItemWrapper";
-import CustomInput from "./CustomInput";
+import AppFormItemWrapper from "./AppFormItemWrapper";
+import AppInput from "./AppInput";
 
-export default [AppSpinner, FormItemWrapper, CustomInput];
+export default [AppSpinner, AppFormItemWrapper, AppInput];

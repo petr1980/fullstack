@@ -1,14 +1,14 @@
 <template>
-  <label class="form-item">
-    <div class="form-item__label">{{ label }}</div>
+  <div class="form-item">
+    <label class="form-item__label">{{ label }}</label>
     <slot />
     <span class="form-item__warn" v-if="invalid">{{ warn }}</span>
-  </label>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "FormItemWrapper",
+  name: "AppFormItemWrapper",
   props: {
     invalid: {
       type: Boolean,
@@ -32,7 +32,9 @@ export default {
   position: relative;
   margin-bottom: 20px;
   &__label {
+    display: block;
     margin-bottom: 5px;
+    font-size: 0.9rem;
   }
   &__warn {
     position: absolute;

@@ -90,21 +90,37 @@
 // Custom scroll
 // =============================================================================
 
-@mixin pretty-scroll($bg-color: transparent, $thumb-color: $grey-600) {
-  scrollbar-color: $thumb-color $bg-color;
-  scrollbar-width: thin;
-
-  &::-webkit-scrollbar {
-    margin-left: 5px;
-    width: 6px;
-    height: 6px;
-  }
-  &::-webkit-scrollbar-track {
-    background: $bg-color;
-    border-radius: 9px;
-  }
-  &::-webkit-scrollbar-thumb {
-    border-radius: 9px;
-    background: $thumb-color;
-  }
+@mixin pretty-scroll($w:5px, $h:5px, $back: $dark-600) {
+    overflow: auto;
+    
+    // firefox
+    scrollbar-color:  $back transparent;
+    scrollbar-width: thin;
+    
+    // == webkit ==
+    // width
+    &::-webkit-scrollbar {
+        width: $w;
+        height: $h;
+        border-left: 10px;
+        border-right: 10px;
+        background: transparent;
+        border-radius: 5px;
+        
+    }
+    // Track
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 5px;
+        
+    }
+    // Handle
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: $back;
+    }
+    // Handle on hover
+    &::-webkit-scrollbar-thumb:hover {
+        background: $white;
+    }
 }
